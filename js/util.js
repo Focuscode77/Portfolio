@@ -11,3 +11,12 @@ const toggleAttribute = (ele, attr, value = "") => {
     }
 
 }
+
+// Grabing elements from Html Document
+
+const getById = id => {
+    const ele = document.getElementById(id);
+
+    return ele;
+
+}

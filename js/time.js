@@ -3,7 +3,7 @@
 //min
 //sec
 
-const addZeroToNumbeerIfLessThan10 = num => {
+const addZeroToNumberIfLessThan10 = num => {
     if (num < 10) {
         return "0" + num;
 
@@ -11,11 +11,17 @@ const addZeroToNumbeerIfLessThan10 = num => {
     return num;
 
 };
-console.log(addZeroToNumbeerIfLessThan10(1))
+console.log(addZeroToNumberIfLessThan10(1))
 
 const getHr = () => {
     const time = new Date();
-    const hr = time.getHours();
+    let hr = time.getHours();
+
+    if (hr > 12) {
+
+        hr = hr - 12;
+
+    }
     return hr;
 };
 
@@ -33,7 +39,16 @@ const getSec = () => {
 };
 
 const getTimeOfDay = () => {
+    const time = new Date();
+    const hr = time.getHours();
+    let timeOfDay = "AM";
 
+    if (hr > 11) {
+
+        timeOfDay = "PM";
+
+    }
+    return timeOfDay;
 
 
 };
@@ -42,13 +57,15 @@ const getTimeOfDay = () => {
 
 
 const setHTML = (hr, min, sec, timeOfday) => {
-    const hour = document.getElementById("hr");
-    const mintue = document.getElementById("min");
-    const second = document.getElementById("sec");
+    const hour = getById("hr");
+    const mintue = getById("min");
+    const second = getById("sec");
+    const dayTime = getById("dayTime");
 
-    hour.innerText = hr;
-    mintue.innerText = min;
-    second.innerText = sec;
+    hour.innerText = addZeroToNumberIfLessThan10(hr);
+    mintue.innerText = addZeroToNumberIfLessThan10(min);
+    second.innerText = addZeroToNumberIfLessThan10(sec);
+    dayTime.innerText = getTimeOfDay();
 
 };
 
