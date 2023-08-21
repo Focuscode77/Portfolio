@@ -17,7 +17,7 @@ const setSplitAmount = (cost, tip, numberOfPeople) => {
     console.log(total);
     const pay = getById("pay");
     console.log(pay);
-    pay.innerText = total.toFixed(2);
+    pay.innerText = "$" + total.toFixed(2);
 }
 
 
