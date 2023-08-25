@@ -20,3 +20,16 @@ const getById = id => {
     return ele;
 
 }
+
+
+
+//Random genrartor 
+
+
+const getRandomCharFromString = string => {
+
+    const index = Math.floor(Math.random() * string.length);
+
+    return string[index];
+
+}
