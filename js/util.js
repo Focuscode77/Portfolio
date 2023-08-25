@@ -23,13 +23,23 @@ const getById = id => {
 
 
 
-//Random genrartor 
-
+//Random char genrartor 
 
 const getRandomCharFromString = string => {
 
     const index = Math.floor(Math.random() * string.length);
 
     return string[index];
+
+}
+
+
+//Random array genrartor 
+
+const getRandomindexFromArray = array => {
+
+    const index = Math.floor(Math.random() * array.length);
+
+    return array[index];
 
 }
