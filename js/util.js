@@ -43,3 +43,18 @@ const getRandomindexFromArray = array => {
     return array[index];
 
 }
+
+
+const setAttr = (ele, attr, value = "") => {
+
+    ele.setAttribute(attr, "");
+
+}
+
+
+
+const removeAttr = (ele, attr) => {
+
+    ele.removeAttribute(attr);
+
+}
