@@ -7,7 +7,7 @@ const allNumbers = "123456789";
 const specialChar = "@#&*(*&^";
 const upperCase = "ABCDEFEFG";
 const upperCheckBoxId = "upperCaseLettersCheckbox";
-const loweerCheckBoxId = "lowerCaseLettersCheckbox";
+const lowerCheckBoxId = "lowerCaseLettersCheckbox";
 const passwordCheckBoxId = "passwordNumbersCheckbox";
 const specialCheckBoxId = "specialCharactersCheckbox";
 
@@ -152,7 +152,7 @@ const getCheckedBoxes = () => {
     // Checkbox ids"
 
     const upperCaseLettersCheckbox = getById(upperCheckBoxId)
-    const lowerCaseLettersCheckbox = getById(loweerCheckBoxId)
+    const lowerCaseLettersCheckbox = getById(lowerCheckBoxId)
     const passwordNumbersCheckbox = getById(passwordCheckBoxId)
     const specialCharactersCheckbox = getById(specialCheckBoxId)
 
