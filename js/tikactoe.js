@@ -2,6 +2,8 @@ let isCpuTurn = false;
 
 let tttScore;
 
+
+
 const tttKey = "ticTacToeScore";
 
 const hasX = id => {
@@ -203,7 +205,7 @@ const selectSquare = id => {
 }
 
 const showDirections = () => {
-    const gameDirections = getById("gameDirections");
+    const gameDirections = getById("mgStartBtn");
     toggleAttribute(gameDirections, "nodisplay");
     const tikTacToeHome = getById("tikTacToeHome");
     toggleAttribute(tikTacToeHome, "nodisplay");
@@ -211,9 +213,9 @@ const showDirections = () => {
 
 const startGame = () => {
     const gameDirections = getById("gameDirections");
-    toggleAttribute(gameDirections, "nodisplay");
+    toggleAttribute.remove(gameDirections, "nodisplay");
     const tikTacToeBoard = getById("tikTacToeBoard");
-    toggleAttribute(tikTacToeBoard, "nodisplay");
+    toggleAttribute.remove(tikTacToeBoard, "nodisplay");
 }
 
 const setTicTacToeScore = score => {

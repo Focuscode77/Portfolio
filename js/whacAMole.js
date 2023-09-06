@@ -64,10 +64,11 @@ const randomizeMole = () => {
 
 const whacAMoleMenuStart = () => {
     toggleAttribute(getById("whacAMoleHome"), "nodisplay");
+    console.log("I am in the function");
 
     const whacAMoleDirections = getById("whacAMoleDirections");
     toggleAttribute(whacAMoleDirections, "nodisplay");
-    whacAMoleDirections.innerText = whacAMoleText.endText;
+    whacAMoleDirections.innerText = whacAMoleText.intro;
 }
 
 const resetwhacAMoleGame = () => {
