@@ -1,6 +1,6 @@
 const offscreen = "offscreen";
 const toggleAttribute = (ele, attr, value = "") => {
-    const hasAttribute = ele.hasAttribute("offscreen");
+    const hasAttribute = ele.hasAttribute(attr);
     if (hasAttribute) {
         // remove the offset attribute
         ele.removeAttribute(attr);

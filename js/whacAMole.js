@@ -47,7 +47,7 @@ const increamentWhacCount = () => {
 
 const whacMole = className => {
     const hitMole = document.querySelector(
-        ".whacAMole.${className}"
+        `.whacAMole.${className}`
     ).classList.contains("mole");
     if (hitMole) {
         increamentWhacCount();
@@ -101,10 +101,12 @@ const resetwhacAMoleGame = () => {
 }
 
 const startTimer = () => {
-    getById("whacAMoleCountDown").innerText = 200;
+    debugger
+    const countDown = 20;
+    getById("whacAMoleCountDown").innerText = countDown;
     let check = setInterval(() => {
         const seconds = parseInt(getById("whacAMoleCountDown").innerText);
-        const count = seconds - 3;
+        const count = seconds - 1;
         if (count === 0) {
             clearInterval(check);
             resetwhacAMoleGame();
@@ -145,7 +147,7 @@ const whacAMoleStart = () => {
             localStorage.setItem(wamKey, score);
         }
         whacAMoleScore = parseInt(localStorage.getItem(wamKey));
-        getById("whakamoleScore").innerText = whacAMoleScore;
+        getById("whacamoleScore").innerText = whacAMoleScore;
     }
 
 

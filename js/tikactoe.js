@@ -205,7 +205,7 @@ const selectSquare = id => {
 }
 
 const showDirections = () => {
-    const gameDirections = getById("mgStartBtn");
+    const gameDirections = getById("gameDirections");
     toggleAttribute(gameDirections, "nodisplay");
     const tikTacToeHome = getById("tikTacToeHome");
     toggleAttribute(tikTacToeHome, "nodisplay");
@@ -213,9 +213,9 @@ const showDirections = () => {
 
 const startGame = () => {
     const gameDirections = getById("gameDirections");
-    toggleAttribute.remove(gameDirections, "nodisplay");
+    toggleAttribute(gameDirections, "nodisplay");
     const tikTacToeBoard = getById("tikTacToeBoard");
-    toggleAttribute.remove(tikTacToeBoard, "nodisplay");
+    toggleAttribute(tikTacToeBoard, "nodisplay");
 }
 
 const setTicTacToeScore = score => {
