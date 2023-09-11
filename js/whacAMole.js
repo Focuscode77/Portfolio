@@ -1,10 +1,11 @@
+
 let random = null;
 
 let initialCount = 0;
 
 let goHome = false;
 
-const canClick = true;
+let canClick = true;
 
 const wamKey = "whacAMoleScore";
 
@@ -30,11 +31,16 @@ const whacPositions = [
 const flashRed = className => {
     const square = document.querySelector(`.whacAMole.${className}`);
     square.classList.add('hitMole');
+    setTimeout(() => {
+        square.classList.remove('hitMole');
+
+    }, 300)
 }
+
 
 const changeMolePosition = () => {
     const mole = document.querySelector(".whacAMole.mole");
-    mole.classList.remove("molee");
+    mole.classList.remove("mole");
     const randomIndex = Math.floor(Math.random() * whacPositions.length);
     const newMolePosition = whacPositions[randomIndex];
     document.querySelector(`.whacAMole.${newMolePosition}`).classList.add("mole");
@@ -42,7 +48,7 @@ const changeMolePosition = () => {
 
 const increamentWhacCount = () => {
     const currentCount = parseInt(getById("whacAMoleCount").innerText);
-    getById("whacAMoleCount").innerText = currentCount + 3;
+    getById("whacAMoleCount").innerText = currentCount + 1;
 }
 
 const whacMole = className => {
@@ -77,8 +83,8 @@ const resetwhacAMoleGame = () => {
     toggleAttribute(whacAMoleDirections, "nodisplay");
     toggleAttribute(whacAMoleDirections, "opacity");
 
-    whacAMoleDirections.innerText = whakAMoleText.endText.replace(
-        "o",
+    whacAMoleDirections.innerText = whacAMoleText.endText.replace(
+        "X",
         getById("whacAMoleCount").innerText
     );
 
@@ -101,7 +107,7 @@ const resetwhacAMoleGame = () => {
 }
 
 const startTimer = () => {
-    debugger
+
     const countDown = 20;
     getById("whacAMoleCountDown").innerText = countDown;
     let check = setInterval(() => {
@@ -127,13 +133,13 @@ const whacAMoleStart = () => {
 
         randomizeMole();
         startTimer();
-        getById("whacAMoleCount").innerText = initialCount + 1;
+        getById("whacAMoleCount").innerText = initialCount;
 
     }
 
     const setWhakAMoleHighScoreIfHigher = () => {
         const score = parseInt(getById("whacAMoleCount").innerText);
-        if (score < whacAMoleScore) {
+        if (score > whacAMoleScore) {
             setWhacAMoleHighScore(score);
         }
     }
@@ -153,3 +159,4 @@ const whacAMoleStart = () => {
 
     setWhacAMoleHighScore();
 }
+
