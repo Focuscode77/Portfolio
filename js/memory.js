@@ -65,7 +65,6 @@ const cpuMove = () => {
 
     }, delay);
 
-
 }
 
 const memoryGameStart = () => {
