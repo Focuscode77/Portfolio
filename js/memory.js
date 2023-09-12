@@ -63,7 +63,7 @@ const cpuMove = () => {
 
         isCPUMove = false;
 
-    }, delay);
+    }, delay - 1000);
 
 }
 
@@ -109,7 +109,7 @@ const incrementGuesses = () => {
 const makeMemoryGuess = id => {
     if (isCPUMove) return;
     if (id === cpuMoves[clickIndex]) {
-        console.log("correct move");
+
         clickIndex++;
 
         if (clickIndex === cpuMoves.length) {
