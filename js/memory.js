@@ -45,22 +45,27 @@ const highlighCPUMove = move => {
 }
 
 const cpuMove = () => {
+
     isCPUMove = true;
 
-    const move = getRandomIndexFromArray(mgCPUOptions);
+    const move = getRandomindexFromArray(mgCPUOptions);
     cpuMoves.push(move);
     let delay = 0;
 
     cpuMoves.forEach(box => {
         setTimeout(() => {
             highlighCPUMove(box);
-        }, delay);
+        }, delay)
         delay += 1000;
     });
 
     setTimeout(() => {
+
         isCPUMove = false;
-    }, delay - 1000);
+
+    }, delay);
+
+
 }
 
 const memoryGameStart = () => {
@@ -69,14 +74,18 @@ const memoryGameStart = () => {
     setTimeout(() => {
         cpuMove();
     }, 1000);
+
 }
+
 
 const addHighlight = id => {
     addClass(getById(id), mgString.memoryHighlight);
+
 }
 
 const removeHighlight = id => {
     removeClass(getById(id), mgString.memoryHighlight);
+
 }
 
 const gameOver = () => {

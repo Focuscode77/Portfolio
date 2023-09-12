@@ -12,6 +12,8 @@ const toggleAttribute = (ele, attr, value = "") => {
 
 }
 
+
+
 // Grabing elements from Html Document
 
 const getById = id => {
@@ -56,5 +58,17 @@ const setAttr = (ele, attr, value = "") => {
 const removeAttr = (ele, attr) => {
 
     ele.removeAttribute(attr);
+
+}
+
+
+const addClass = (ele, className) => {
+    ele.classList.add(className);
+
+}
+
+
+const removeClass = (ele, className) => {
+    ele.classList.remove(className);
 
 }
