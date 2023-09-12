@@ -4,6 +4,7 @@ let tttScore;
 
 
 
+
 const tttKey = "ticTacToeScore";
 
 const hasX = id => {
@@ -150,8 +151,8 @@ const resetGame = () => {
     toggleAttribute(getById("tikTacToeBoard"), "nodisplay");
     const allSquares = document.getElementsByClassName("tictactoe");
     for (let i = 0; i < allSquares.length; i++) {
-        allSquares[i].classList.remove("x");
-        allSquares[i].classList.remove("o");
+        allSquares[i].classList.remove(hasX);
+        allSquares[i].classList.remove(hasO);
     }
 }
 
