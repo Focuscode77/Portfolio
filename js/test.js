@@ -2,42 +2,42 @@
 
 //fetch(urlString,data);
 
-//const apiKey = ";
+const apiKey = "";
 
-//const resource = "cars";
+const resource = "cars";
 
-//const requestUrl = `/api/${apiKey}/${resource}`;
+const requestUrl = `/api/${apiKey}/${resource}`;
 
-//const body = {
+const body = {
 
-    //name: "test",
-    //color: "green"
-
-
-//}
+  //name: "test",
+  //color: "green"
 
 
+}
 
-//const data = {
+
+
+const data = {
 
   //  method: GET,
-  //  headers: {
-  //      'Accept': 'application/json',
-   //     'Content-Type': 'application/json'
-    //},
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
 
 
-    //body: JSON.stringify(body)
+  body: JSON.stringify(body)
 
-//}
-
-
-//fetch(requestUrl, data).then(d => {
-
-   // d.json().then(data => {
+}
 
 
+fetch(requestUrl, data).then(d => {
 
-   // })
+  d.json().then(data => {
 
- //}).catch(err => console.log(err));
+
+
+  })
+
+}).catch(err => console.log(err));
