@@ -99,20 +99,32 @@ const resetwhacAMoleGame = () => {
         const whacAMoleBoard = getById("whacAMoleBoard");
         toggleAttribute(whacAMoleBoard, "nodisplay");
 
-        const whacAMoleHome = getById("whakAMoleHome");
+        const whacAMoleHome = getById("whacAMoleHome");
         toggleAttribute(whacAMoleHome, "nodisplay");
 
         canClick = true;
-    }, 2000);
+    }, 4000);
 }
 
 const setWhakAMoleHighScoreIfHigher = () => {
+
     const score = parseInt(getById("whacAMoleCount").innerText);
     if (score > whacAMoleScore) {
         setWhacAMoleHighScore(score);
     }
 }
 
+const setWhacAMoleHighScore = score => {
+    whakAMoleScore = localStorage.getItem(wamKey);
+    if (!whacAMoleScore) {
+        localStorage.setItem(wamKey, 0);
+    }
+    if (score) {
+        localStorage.setItem(wamKey, score);
+    }
+    whacAMoleScore = parseInt(localStorage.getItem(wamKey));
+    getById("whacAMoleScore").innerText = whacAMoleScore;
+}
 
 const startTimer = () => {
 
@@ -147,19 +159,8 @@ const whacAMoleStart = () => {
 
 
 
-    const setWhacAMoleHighScore = score => {
-        whakAMoleScore = localStorage.getItem(wamKey);
-        if (!whacAMoleScore) {
-            localStorage.setItem(wamKey, 0);
-        }
-        if (score) {
-            localStorage.setItem(wamKey, score);
-        }
-        whacAMoleScore = parseInt(localStorage.getItem(wamKey));
-        getById("whacamoleScore").innerText = whacAMoleScore;
-    }
 
-
-    setWhacAMoleHighScore();
 }
+
+setWhacAMoleHighScore();
 

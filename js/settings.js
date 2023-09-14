@@ -13,15 +13,18 @@ const resetScores = () => {
         localStorage.removeItem("mgHighScore")
         console.log("Hello memory Game");
 
-    } if (ticTakGameReset.checked) {
+    }
+    if (ticTakGameReset.checked) {
 
         localStorage.removeItem("ticTacToeScore")
         console.log("Hello Tic Tak Toe");
 
 
-    } if (wamGameReset.checked) {
+    }
+    if (wamGameReset.checked) {
 
-        localStorage.removeItem("whacamoleScore")
+        localStorage.removeItem("whacAMoleScore")
+
         console.log("Hello Wac a mole");
 
 
