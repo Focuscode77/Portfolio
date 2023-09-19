@@ -146,13 +146,16 @@ const getRandomBox = () => {
 }
 
 const resetGame = () => {
+    debugger
     isCpuTurn = false;
     toggleAttribute(getById("tikTacToeHome"), "nodisplay");
     toggleAttribute(getById("tikTacToeBoard"), "nodisplay");
     const allSquares = document.getElementsByClassName("tictactoe");
+
     for (let i = 0; i < allSquares.length; i++) {
-        allSquares[i].classList.remove(hasX);
-        allSquares[i].classList.remove(hasO);
+        const ele = allSquares[i];
+        ele.classList.remove("x");
+        ele.classList.remove("o");
     }
 }
 

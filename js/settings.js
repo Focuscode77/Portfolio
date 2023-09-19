@@ -16,7 +16,7 @@ const resetScores = () => {
     }
     if (ticTakGameReset.checked) {
 
-        localStorage.removeItem("ticTacToeScore")
+        localStorage.removeItem("tictactoeScore")
         console.log("Hello Tic Tak Toe");
 
 
